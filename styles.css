@@ -21,10 +21,10 @@
 }
 
 body {
-
   width: 100vw;
   height: 100vh;
   font-size: 16px;
+  overflow: hidden;
 }
 
 .container {
@@ -41,7 +41,7 @@ body {
   background-image: url("./images/pattern-background-desktop.svg");
   background-repeat: no-repeat;
   background-position: top;
-  margin: 20rem auto;
+  margin: 15vw auto;
 }
 
 main {
@@ -82,6 +82,7 @@ main .card_description {
 }
 
 main .card_plan_container {
+  background-color: rgba(114, 128, 167, 0.041);
   width: 90%;
   display: flex;
   flex-direction: row;
@@ -89,6 +90,8 @@ main .card_plan_container {
   justify-content: space-between;
   padding: 1rem 1rem 2rem 1rem;
   gap: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
 }
 
 .card_plan {
@@ -120,19 +123,44 @@ main .card_buttons {
   padding: 1rem;
   border-radius: 0.5rem;
   border: none;
+}
+
+.change_btn {
+  color: hsl(245, 75%, 52%);
+  font-weight: 700;
+}
+
+.change_btn:hover {
+  color: hsl(245, 75%, 52%, 60%);
+  text-decoration: none;
   cursor: pointer;
+  transition: ease 0.6ms;
 }
 
 .proceed_btn {
   background-color: var(--bright-blue);
   color: var(--very-pale-blue);
+  box-shadow: -0.5rem 1.5rem 3.5rem -1rem hsl(245, 75%, 52%, 60%);
   font-weight: 700;
+}
+
+.proceed_btn:hover {
+  background-color: hsl(245, 75%, 52%, 80%);
+  cursor: pointer;
+  transition: ease 0.6ms;
 }
 
 .cancel_btn {
   background-color: transparent;
   color: var(--desaturated-blue);
   font-weight: 700;
+}
+
+.cancel_btn:hover {
+  color: black;
+  cursor: pointer;
+  transition: ease 0.6ms;
+
 }
 
 .attribution {
@@ -144,79 +172,66 @@ main .card_buttons {
 }
 .attribution a { color: hsl(228, 45%, 44%); }
 
-/* @media screen and (max-width: 1400px) {
+@media screen and (max-width: 700px) {
 
   .bg {
-    width: 24rem;
-    height: 45rem;
-    background-color: var(--pale-blue);
-    background-image: url("./images/pattern-background-desktop.svg");
-    background-repeat: no-repeat;
-    background-position: top;
-    margin: 20rem auto;
+    margin: 55vw auto;
   }
 
-  main {
-    width: 18rem;
+  br {
+    display: none;
   }
-
-  main .hero_image {
-    width: 18rem;
-  }
-
-  main .card_plan_container {
-    width: 18rem;
-  }
-
-} */
-
-@media screen and (max-width: 900px) {
-
-  .bg {
-    width: 24rem;
-    height: 45rem;
-    background-color: var(--pale-blue);
-    background-image: url("./images/pattern-background-desktop.svg");
-    background-repeat: no-repeat;
-    background-position: top;
-    margin: 20rem auto;
-  }
-
-  main {
-    width: 18rem;
-  }
-
-  main .hero_image {
-    width: 18rem;
-  }
-
-  main .card_plan_container {
-    width: 18rem;
-  }
-
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
+
+  body {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--pale-blue);
+  }
+
 
   .bg {
-    width: 24rem;
-    height: 45rem;
-    background-color: var(--pale-blue);
-    background-image: url("./images/pattern-background-desktop.svg");
-    background-repeat: no-repeat;
-    background-position: top;
+    width: 100%;
     margin: 0 auto;
+    height: 100%;
+    background-image: none;
   }
 
-  main {
+  main, main .hero_image {
     width: 18rem;
   }
 
-  main .hero_image {
+  main, main .hero_image {
     width: 18rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+  }
+
+  main .card_description {
+    width: 15rem;
+  }
+
+  main .card_buttons {
+    width: 16.5rem;
+    padding: 1rem 0rem 0rem 0rem;
   }
 
   main .card_plan_container {
-    width: 18rem;
+    width: 19rem;
+    padding: 1rem 2rem 1rem 1.5rem;
   }
+
+  .proceed_btn {
+    margin-bottom: 1.5rem;
+  }
+
+
 }
+
+
